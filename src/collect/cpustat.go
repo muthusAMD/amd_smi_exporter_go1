@@ -39,10 +39,11 @@
 
 // Package cpustat provides an example parser for Linux CPU utilization statistics.
 package collect
-package amd_smi
 //import "github.com/amd/go_amd_smi"
 import "github.com/muthusAMD/amdsmi_go1"
 //import "github.com/muthusAMD/amdsmi_go1/src/amd_smi"
+
+//package amd_smi
 
 var UINT16_MAX = uint16(0xFFFF)
 var UINT32_MAX = uint32(0xFFFFFFFF)
@@ -110,7 +111,7 @@ func Scan() (AMDParams) {
 	//value16 := uint16(0)
 
 	//num_threads := int(goamdsmi.GO_cpu_number_of_threads_get())
-	if true == goamdsmi.Amdsmi_init(AMDSMI_INIT_AMD_CPUS) {
+	if true == amd_smi.Amdsmi_init(AMDSMI_INIT_AMD_CPUS) {
 		//num_threads := int(goamdsmi.GO_cpu_number_of_threads_get())
 		//stat.Threads = uint(num_threads)
 	}
